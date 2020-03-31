@@ -1,5 +1,6 @@
 /**
  * Returns the first unique character or `null` if no such character is found.
+ * This solution works with all Unicode characters.
  * Lower and uppercase characters are considered to be different.
  * Whitespaces, line breaks and tabs are not considered valid characters.
  *

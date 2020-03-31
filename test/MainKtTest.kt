@@ -5,52 +5,47 @@ import org.junit.jupiter.api.Assertions.*
 internal class MainKtTest {
 
     @Test
-    fun allUpperCaseWithSingleUniqueChar_find_singleUniqueChar() {
+    fun `when all uppercase letters with a single unique element expect that element`() {
         assertEquals('I', "MYSUGRISMYSUGR".findFirstUniqueCharacter())
     }
 
     @Test
-    fun allUpperCaseWithSeveralUniqueChar_find_firstUniqueChar() {
+    fun `when all uppercase letters with several unique elements expect the first unique element`() {
         assertEquals('I', "MYSUGRISMYSUGR!".findFirstUniqueCharacter())
     }
 
     @Test
-    fun mixedUpperCaseWithSeveralUniqueChar_find_firstUniqueChar() {
+    fun `when lower and uppercase letters with several unique elements expect the first unique element`() {
         assertEquals('m', "mysugrISMYSUGR!".findFirstUniqueCharacter())
     }
 
     @Test
-    fun allUpperCaseWithoutUniqueChar_find_null() {
+    fun `when all capital letters without unique element expect null`() {
         assertEquals(null, "MYSUGRMYSUGR".findFirstUniqueCharacter())
     }
 
     @Test
-    fun blank_find_null() {
+    fun `when blank string expect null`() {
         assertEquals(null, " ".findFirstUniqueCharacter())
     }
 
     @Test
-    fun empty_find_null() {
+    fun `when empty string expect null`() {
         assertEquals(null, "".findFirstUniqueCharacter())
     }
 
     @Test
-    fun multilineBlank_find_null() {
+    fun `when multiline empty string expect null`() {
         assertEquals(null, " \n ".findFirstUniqueCharacter())
     }
 
     @Test
-    fun number_find_1() {
-        assertEquals('1', "123".findFirstUniqueCharacter())
-    }
-
-    @Test
-    fun arrows_find_null() {
+    fun `when special characters without unique elements expect null`() {
         assertEquals(null, "←↑→↓←↑→↓".findFirstUniqueCharacter())
     }
 
     @Test
-    fun arrows_find_leftArrow() {
+    fun `when special characters with unique elements expect first unique element`() {
         assertEquals('←', "↑→↓←↑→↓".findFirstUniqueCharacter())
     }
 }

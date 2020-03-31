@@ -6,61 +6,51 @@ internal class MainKtTest {
 
     @Test
     fun allUpperCaseWithSingleUniqueChar_find_singleUniqueChar() {
-        val word = "MYSUGRISMYSUGR"
-        assertEquals('I', word.findFirstUniqueCharacter())
+        assertEquals('I', "MYSUGRISMYSUGR".findFirstUniqueCharacter())
     }
 
     @Test
     fun allUpperCaseWithSeveralUniqueChar_find_firstUniqueChar() {
-        val word = "MYSUGRISMYSUGR!"
-        assertEquals('I', word.findFirstUniqueCharacter())
+        assertEquals('I', "MYSUGRISMYSUGR!".findFirstUniqueCharacter())
     }
 
     @Test
     fun mixedUpperCaseWithSeveralUniqueChar_find_firstUniqueChar() {
-        val word = "mysugrISMYSUGR!"
-        assertEquals('m', word.findFirstUniqueCharacter())
+        assertEquals('m', "mysugrISMYSUGR!".findFirstUniqueCharacter())
     }
 
     @Test
     fun allUpperCaseWithoutUniqueChar_find_null() {
-        val word = "MYSUGRMYSUGR"
-        assertEquals(null, word.findFirstUniqueCharacter())
+        assertEquals(null, "MYSUGRMYSUGR".findFirstUniqueCharacter())
     }
 
     @Test
     fun blank_find_null() {
-        val word = " "
-        assertEquals(null, word.findFirstUniqueCharacter())
+        assertEquals(null, " ".findFirstUniqueCharacter())
     }
 
     @Test
     fun empty_find_null() {
-        val word = ""
-        assertEquals(null, word.findFirstUniqueCharacter())
+        assertEquals(null, "".findFirstUniqueCharacter())
     }
 
     @Test
     fun multilineBlank_find_null() {
-        val word = " \n "
-        assertEquals(null, word.findFirstUniqueCharacter())
+        assertEquals(null, " \n ".findFirstUniqueCharacter())
     }
 
     @Test
     fun number_find_1() {
-        val word = "123"
-        assertEquals('1', word.findFirstUniqueCharacter())
+        assertEquals('1', "123".findFirstUniqueCharacter())
     }
 
     @Test
     fun arrows_find_null() {
-        val word = "←↑→↓←↑→↓"
-        assertEquals(null, word.findFirstUniqueCharacter())
+        assertEquals(null, "←↑→↓←↑→↓".findFirstUniqueCharacter())
     }
 
     @Test
     fun arrows_find_leftArrow() {
-        val word = "↑→↓←↑→↓"
-        assertEquals('←', word.findFirstUniqueCharacter())
+        assertEquals('←', "↑→↓←↑→↓".findFirstUniqueCharacter())
     }
 }

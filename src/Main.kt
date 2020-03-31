@@ -9,7 +9,7 @@
 fun CharSequence.findFirstUniqueCharacter(): Char? {
 
     // Create linked hash map that relates char to its count, keeping insertion order
-    val charCountMap = linkedMapOf<Char, Int>().toMutableMap()
+    val charCountMap = linkedMapOf<Char, Int>()
     forEach {
         if (it.isWhitespace()) return@forEach
         charCountMap[it] = (charCountMap[it] ?: 0) + 1

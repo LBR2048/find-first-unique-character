@@ -45,7 +45,11 @@ internal class MainKtTest {
     }
 
     @Test
-    fun `when special characters with unique elements expect first unique element`() {
-        assertEquals('←', "↑→↓←↑→↓".findFirstUniqueCharacter())
+    fun `large char sequence with unique elements expect first unique element`() {
+        val uniqueChar1 = 40001.toChar()
+        val uniqueChar2 = 40002.toChar()
+        val uniqueChar3 = 40003.toChar()
+        val repeatedChars = (0..40000).map { it.toChar() }.joinToString(separator = "").repeat(1000)
+        assertEquals(uniqueChar1, (repeatedChars + uniqueChar1 + uniqueChar2 + repeatedChars + uniqueChar3).findFirstUniqueCharacter())
     }
 }

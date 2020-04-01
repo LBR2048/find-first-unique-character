@@ -6,7 +6,7 @@
  *
  * The time complexity is O(n)
  */
-fun CharSequence.findFirstUniqueCharacter(): Char? {
+fun CharSequence.findFirstUniqueCharacterSlower(): Char? {
 
     // Create linked hash map that relates char to its count, keeping insertion order
     val charCountMap = linkedMapOf<Char, Int>()
